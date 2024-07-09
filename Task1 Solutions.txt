@@ -1,0 +1,46 @@
+Q- Find out how to find out the files which are symbolic links in a folder.
+
+Command ->  find /path/to/folder -type l
+
+Explanation:
+find: The command used to search for files and directories within a directory hierarchy.
+/path/to/folder: Replace this with the actual path to the folder you want to search. For example, if you want to search in the current directory, you can use ..
+-type l: This option tells find to search for symbolic links specifically (l).
+
+
+Q- Find out how to create symbolic links for files
+
+Command ->   ln -s file1.txt ~/Desktop/file1_link
+ln: The command to create links.
+-s: Specifies that we are creating a symbolic (soft) link.
+file1.txt: The target file for which we are creating the link.
+~/Desktop/file1_link: The path where the symbolic link will be created (~/Desktop is the desktop directory in your home directory).
+
+
+Q- Find out how you would use grep only on particular file extensions
+
+Using find and grep:
+
+Find Files by Extension:
+Use the find command to locate files with a specific extension (e.g., .txt):
+
+bash
+Copy code
+
+Command ->  find /path/to/search -type f -name '*.txt'
+
+/path/to/search: Replace this with the directory path where you want to search.
+-type f: Specifies that you're looking for regular files (not directories or other types).
+-name '*.txt': Searches for files with .txt extension.
+
+Pipe find Output to grep:
+Once you have the list of files, you can use grep to search for a pattern within those files:
+
+bash
+Copy code
+
+Command -> find /path/to/search -type f -name '*.txt' -exec grep 'pattern' {} +
+
+'pattern': Replace this with the pattern you want to search for within the files.
+{}: Represents the placeholder for each file found by find.
++: Ensures that grep is efficiently executed with multiple files.

@@ -1,0 +1,5 @@
+sp.mridu@sse-lg-113-140:~$ source /home/.devtools/tools/env.sh
+sp.mridu@sse-lg-113-140:~$ efdocker run gcc5 --name ankur_gcc5
+f93d4d245432ffc5cc8d6c709c7f1f166b905c5e21572b214517830774dc7aaf
+sp.mridu@sse-lg-113-140:~$ docker exec -ti ankur_gcc5 bash
+root@docker-gcc5:~#
