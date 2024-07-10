@@ -1,3 +1,6 @@
+                     Linux related problems
+
+
 Q- Find out how to find out the files which are symbolic links in a folder.
 
 Command ->  find /path/to/folder -type l
